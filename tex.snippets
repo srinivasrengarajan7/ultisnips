@@ -1,0 +1,166 @@
+snippet "(^|[^a-zA-Z])ff" "\frac{}{}" rA
+`!p snip.rv = match.group(1)`\frac{${1:${VISUAL:}}}{$2}$0
+endsnippet
+
+snippet "(^|[^a-zA-Z])bbr" "\mathbb{R}" rA
+`!p snip.rv = match.group(1)`\mathbb{R}$0
+endsnippet
+
+snippet "(^|[^a-zA-Z])mm" "Inline LaTeX math" rA
+`!p snip.rv = match.group(1)`\$${1:${VISUAL:}}\$ $0
+endsnippet
+
+snippet imp "Implies sign" i
+\Rightarrow$0
+endsnippet
+
+snippet sq "Square root" i
+\sqrt{$1}$0
+endsnippet
+
+snippet cdot "centered product dot" iA
+\cdot$0
+endsnippet
+
+
+snippet rec "reciprocal " i
+\frac{1}{$1}$0
+endsnippet
+
+snippet env "New LaTeX environment"
+\begin{$1}
+	$2
+\end{$1}
+$0
+endsnippet
+
+snippet lvert "left and right dynamic | signs (requires amsmath)" i
+\left| $1\right|$0
+endsnippet
+
+snippet lVert "left and right dynamic norm sign" i
+\lVert $1\rVert$0
+endsnippet
+
+
+snippet leftp "left and right dynamic parentheses" i
+\left($1\right)$0
+endsnippet
+
+snippet leftc "left and right dynamic parentheses" i
+\left{$1\right}$0
+endsnippet
+
+snippet lefts "left and right dynamic parentheses" i
+\left[$1\right]$0
+endsnippet
+
+snippet "([^a-zA-Z])ee" "e^{} supercript" rA
+`!p snip.rv = match.group(1)`e^{${1:${VISUAL:}}}$0
+endsnippet
+
+snippet preambledoc "Preamble format for the document class" b
+\documentclass{scrartcl}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{amsmath, amsfonts, amssymb, blindtext, chngcntr, listings$1}
+\usepackage[osf]{Baskervaldx}
+\usepackage[baskervaldx]{newtxmath}
+
+\counterwithin*{equation}{section}
+\counterwithin*{equation}{subsection}
+
+\definecolor{tyrian}{HTML}{990024}
+\definecolor{claimgreen}{HTML}{249900}
+
+\renewcommand*{\sectionformat}{}
+\renewcommand*{\subsectionformat}{}
+
+\setlength\parindent{0pt}
+\numberwithin{equation}{section}
+
+\theoremstyle{plain}
+\newtheorem{rem}{Remark}
+
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}[section]
+\newtheorem{ex}{Example}[section]
+\newtheorem{exercise}{Exercise}[section]
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{lem}{Lemma}[section]
+
+
+
+\title{$2}
+\author{$3}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+$0
+
+
+
+\end{document}
+endsnippet
+
+snippet preamblebeamer "preamble for a beamer presentation" b
+
+\documentclass{beamer}
+\usepackage{amsmath, amsfonts, amssymb$1}
+\usepackage{metropolis, kpfonts, baskervald}
+\usetheme{metropolis}
+
+\title{$2}
+
+\begin{document}
+
+\frame{\titlepage}
+
+$0
+
+
+
+\end{document}
+endsnippet
+
+snippet frame "beamer frame environment - a slide" b
+\begin{frame}
+	\frametitle{$1}
+	$2
+\end{frame}
+
+$0
+endsnippet
+
+
+snippet inr "in R - requires amssymb"
+\in \mathbb{R} $0
+
+endsnippet
+
+snippet sec "new section" b
+\section$1{$2}
+$0
+endsnippet
+
+snippet subsec "new subsection" b
+\subsection$1{$2}
+$0
+endsnippet
+
+snippet mbf "Creates a mathbf env - for vectors" i
+\mathbf{$1} $0
+endsnippet
+
+snippet opn "operatorname shortcut" i
+\operatorname{$1} $0
+endsnippet
+
+snippet del "partial derivative sign" i
+\partial $0
+endsnippet
